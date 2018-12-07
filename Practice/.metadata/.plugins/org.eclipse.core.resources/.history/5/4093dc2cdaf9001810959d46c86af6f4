@@ -1,0 +1,2 @@
+spring.mvc.view.prefix:/WEB-INF/jsp/index.jsp
+spring.mvc.view.suffix: .jsp

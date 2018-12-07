@@ -1,0 +1,14 @@
+package com.crmit.file_upload.File.Upload.Controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/")
+public class UploadFile {
+
+	@RequestMapping(method= "GET")
+	public string index(){
+		return "index";
+	}
+}

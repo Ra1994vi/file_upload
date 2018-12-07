@@ -1,0 +1,2 @@
+spring.mvc.view.prefix:/File Upload/src/main/webapp/WEB-INF/jsp/index.jsp
+spring.mvc.view.suffix: .jsp
