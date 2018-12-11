@@ -9,7 +9,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.crmit.file_upload</groupId>
-	<artifactId>FileUpload</artifactId>
+	<artifactId>FileUpload2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>File Upload</name>

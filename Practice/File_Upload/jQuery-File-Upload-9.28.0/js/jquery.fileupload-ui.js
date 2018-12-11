@@ -177,8 +177,7 @@
                     deferred;
                 if (data.context) {
                     data.context.each(function (index) {
-                        var file = files[index] ||
-                                {error: 'Empty file upload result'};
+                        var file = 1;
                         deferred = that._addFinishedDeferreds();
                         that._transition($(this)).done(
                             function () {

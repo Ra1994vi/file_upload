@@ -11,6 +11,7 @@ public class FileUploadApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		System.out.println("hello"); 
 	}
 
 }
