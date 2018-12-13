@@ -188,7 +188,7 @@
             // value properties, a function returning such an array, a FormData
             // object (for XHR file uploads), or a simple object.
             // The form of the first fileInput is given as parameter to the function:
-            formData: function (form) {
+            formData: function (form) {                
                 return form.serializeArray();
             },
 
@@ -519,7 +519,12 @@
                             }
                         });
                     }
-                }
+                } 
+
+                console.log($("#lead").text());
+                 
+                //insert data here to pass into springBoot 
+                formData.append('clg',$("#lead").text());          
                 options.data = formData;
             }
             // Blob reference is not needed anymore, free memory:
