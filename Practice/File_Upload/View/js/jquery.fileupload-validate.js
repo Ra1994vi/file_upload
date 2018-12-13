@@ -71,6 +71,7 @@
             // has to be overriden for maxNumberOfFiles validation:
             getNumberOfFiles: $.noop,
 
+            maxFileSize: 10000000, // 10 MB
             // Error and info messages:
             messages: {
                 maxNumberOfFiles: 'Maximum number of files exceeded',
