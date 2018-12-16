@@ -1,0 +1,54 @@
+<html></!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+<input type="file" name="afile" id="afile" multiple="true" />
+
+<script>
+document.querySelector('#afile').addEventListener('change', function(e) {
+var file = this.files[0];
+var fd = new FormData();
+fd.append("files", file);
+// These extra params aren't necessary but show that you can include other data.
+fd.append("clg", "Groucho");
+fd.append("accountnum", 123456);
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'http://localhost:8080/upload2', true);
+
+xhr.upload.onprogress = function(e) {
+if (e.lengthComputable) {
+  var percentComplete = (e.loaded / e.total) * 100;
+  console.log(percentComplete + '% uploaded');
+}
+};
+xhr.onload = function() {
+if (this.status == 200) {
+  var resp = JSON.parse(this.response);
+  console.log('Server got:', resp);
+  var image = document.createElement('img');
+  image.src = resp.dataUrl;
+  document.body.appendChild(image);
+};
+};
+xhr.send(fd);
+}, false);
+</script>
+<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>

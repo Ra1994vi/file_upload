@@ -1,4 +1,4 @@
-package com.crmit.file_upload.File.Upload.model;
+package com.file_upload.File.Upload.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

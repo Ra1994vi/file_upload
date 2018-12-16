@@ -1,19 +1,26 @@
-package com.crmit.file_upload.File.Upload.model;
+package com.file_upload.File.Upload.model;
+
+import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
-@JsonIgnoreProperties(ignoreUnknown=true)
+@JsonIgnoreProperties(ignoreUnknown=false)
 @JsonRootName("studentDetails")
-public class CSVDetails {
+public class CSVDetails implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@JsonProperty("name")
 	private String name;
 	
 	@JsonAlias({ "phoneNumber", "mail" })
-	private String ContactOrMail;
+	private String contactOrMail;
 	
 	@JsonAlias({ "x std", "10th","sslc","xth" })
 	private String sslc;
@@ -36,11 +43,11 @@ public class CSVDetails {
 	}
 
 	public String getContactOrMail() {
-		return ContactOrMail;
+		return contactOrMail;
 	}
 
 	public void setContactOrMail(String contactOrMail) {
-		ContactOrMail = contactOrMail;
+		this.contactOrMail = contactOrMail;
 	}
 
 	public String getSslc() {
@@ -77,7 +84,7 @@ public class CSVDetails {
 
 	@Override
 	public String toString() {
-		return "CSVDetails [name=" + name + ", ContactOrMail=" + ContactOrMail + ", sslc=" + sslc + ", puc=" + puc
+		return "CSVDetails [name=" + name + ", ContactOrMail=" + contactOrMail + ", sslc=" + sslc + ", puc=" + puc
 				+ ", address=" + address + ", college=" + college + "]";
 	}
 	
